@@ -21,7 +21,7 @@ public class MainActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn_0, R.id.btn_1, R.id.btn_2, R.id.btn_3})
+    @OnClick({R.id.btn_0, R.id.btn_1, R.id.btn_2, R.id.btn_3,R.id.btn_4, R.id.btn_5, R.id.btn_6})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_0:
@@ -35,6 +35,15 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.btn_3:
                 startActivity(EricQRActivity.class);
+                break;
+            case R.id.btn_4:
+//                startActivity(CaptureActivity.class);
+                break;
+            case R.id.btn_5:
+//                startActivity(EcodeActivity.class);
+                break;
+            case R.id.btn_6:
+//                startActivity(EricQRActivity.class);
                 break;
         }
     }
