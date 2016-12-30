@@ -4,11 +4,11 @@ import android.app.ListActivity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.v4.widget.SimpleCursorAdapter;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 
 import com.myself.mykotlin.R;
 import com.myself.mykotlin.db.dao.CityDBDao;
@@ -22,11 +22,20 @@ import org.greenrobot.greendao.query.QueryBuilder;
 import java.text.DateFormat;
 import java.util.Date;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class NoteActivity extends ListActivity {
 
     public static final String TAG = "DaoExample";
+
+    @BindView(R.id.editTextNote)
+    EditText mEditTextNote;
+    @BindView(android.R.id.list)
+    ListView mList;
+
     private SQLiteDatabase db;
-    private EditText editText;
     private DaoMaster daoMaster;
     private DaoSession daoSession;
     private Cursor cursor;
@@ -35,6 +44,7 @@ public class NoteActivity extends ListActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note);
+        ButterKnife.bind(this);
         // 官方推荐将获取 DaoMaster 对象的方法放到 Application 层，这样将避免多次创建生成 Session 对象
         setupDatabase();
         // 获取 NoteDao 对象
@@ -49,8 +59,6 @@ public class NoteActivity extends ListActivity {
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, android.R.layout.simple_list_item_2, cursor, from,
                 to);
         setListAdapter(adapter);
-
-        editText = (EditText) findViewById(R.id.editTextNote);
     }
 
     private void setupDatabase() {
@@ -74,7 +82,8 @@ public class NoteActivity extends ListActivity {
      *
      * @param view
      */
-    public void onMyButtonClick(View view) {
+    @OnClick({R.id.buttonAdd, R.id.buttonSearch})
+    public void onClick(View view) {
         switch (view.getId()) {
             case R.id.buttonAdd:
                 addNote();
@@ -89,8 +98,8 @@ public class NoteActivity extends ListActivity {
     }
 
     private void addNote() {
-        String noteText = editText.getText().toString();
-        editText.setText("");
+        String noteText = mEditTextNote.getText().toString();
+        mEditTextNote.setText("");
 
         final DateFormat df = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.MEDIUM);
         String comment = "Added on " + df.format(new Date());
