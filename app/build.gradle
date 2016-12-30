@@ -18,24 +18,48 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java', 'src/main/java-gen']
+            jniLibs.srcDirs = ['libs']
+            assets.srcDirs = ['src/main/assets']
+        }
+    }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    //添加这一句
+    androidTestCompile('com.android.support:multidex-instrumentation:1.0.1') {
+        exclude group: 'com.android.support', module: 'multidex'
+    }
+    testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:design:24.2.1'
+    compile 'com.android.support:multidex:1.0.1'
+    //添加这一句
+    apt 'com.jakewharton:butterknife-compiler:8.4.0'
     compile 'com.jakewharton:butterknife:8.4.0'
     compile 'cz.msebera.android:httpclient:4.4.1.2'
     compile 'com.squareup.okhttp3:okhttp:3.3.1'
     compile 'com.squareup.okhttp3:logging-interceptor:3.3.1'
     compile 'com.squareup.okio:okio:1.8.0'
-    compile 'com.facebook.fresco:fresco:0.11.0'
     compile 'com.facebook.fresco:imagepipeline-okhttp3:0.11.0'
-    compile 'com.android.support:design:24.2.1'
-    testCompile 'junit:junit:4.12'
-    apt 'com.jakewharton:butterknife-compiler:8.4.0'
+    compile 'com.facebook.fresco:fresco:0.11.0'
     compile 'com.google.zxing:core:3.3.0'
+    compile 'org.greenrobot:greendao:3.2.0'
+}
+//编译结束后删除unaligned包
+android.applicationVariants.all { variant ->
+    variant.assemble.doLast {
+        variant.outputs.each { output ->
+            println "aligned " + output.outputFile
+            println "unaligned " + output.packageApplication.outputFile
+
+            File file = output.packageApplication.outputFile;
+            if (variant.buildType.zipAlignEnabled && file.getName().contains("unaligned")) {
+                println "deleting " + file.getName()
+                file.delete()
+            }
+        }
+    }
 }

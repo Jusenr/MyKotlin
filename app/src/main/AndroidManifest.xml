@@ -60,6 +60,8 @@
         </activity>
         <activity android:name=".demo.zxing.EricQRActivity">
         </activity>
+        <activity android:name=".demo.NoteActivity">
+        </activity>
     </application>
 
 </manifest>

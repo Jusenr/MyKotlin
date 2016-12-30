@@ -5,6 +5,7 @@ import android.view.View;
 
 import com.myself.mykotlin.base.BaseActivity;
 import com.myself.mykotlin.demo.CreateQRActivity;
+import com.myself.mykotlin.demo.NoteActivity;
 import com.myself.mykotlin.demo.ecodetest.EcodeActivity;
 import com.myself.mykotlin.demo.zxing.CaptureActivity;
 import com.myself.mykotlin.demo.zxing.EricQRActivity;
@@ -37,7 +38,7 @@ public class MainActivity extends BaseActivity {
                 startActivity(EricQRActivity.class);
                 break;
             case R.id.btn_4:
-//                startActivity(CaptureActivity.class);
+                startActivity(NoteActivity.class);
                 break;
             case R.id.btn_5:
 //                startActivity(EcodeActivity.class);

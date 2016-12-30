@@ -1,7 +1,7 @@
 package com.myself.mykotlin;
 
-import android.app.Application;
 import android.content.Context;
+import android.support.multidex.MultiDexApplication;
 
 import com.myself.mykotlin.http.OkHttpManager;
 import com.myself.mykotlin.http.interceptor.CacheStrategyInterceptor;
@@ -26,7 +26,7 @@ import okhttp3.OkHttpClient;
  * Date       : 2016/12/27 16:05.
  */
 
-public class TotalApplication extends Application {
+public class TotalApplication extends MultiDexApplication {
     private static Context mContext;
     private static OkHttpClient mOkHttpClient;
     public static String sdCardPath;//SdCard路径
