@@ -29,7 +29,7 @@ public class FullScreenActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_file_chooser);
         webView = (X5WebView) findViewById(R.id.web_filechooser);
-        webView.loadUrl("file:///android_asset/webpage/fullscreenVideo.html");
+        webView.loadUrl("file://android_asset/webpage/fullscreenVideo.html");
 
         getWindow().setFormat(PixelFormat.TRANSLUCENT);
 

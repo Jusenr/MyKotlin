@@ -44,7 +44,7 @@ public class ImageResultActivity extends BaseActivity {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_webView_transport);
+        setContentView(R.layout.activity_webview_transport);
         webView = (X5WebView) findViewById(R.id.full_web_webview);
         webView.loadUrl("file:///android_asset/webpage/Image.html");
 
