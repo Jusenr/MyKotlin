@@ -9,6 +9,7 @@ import com.myself.mykotlin.demo.NoteActivity;
 import com.myself.mykotlin.demo.ecodetest.EcodeActivity;
 import com.myself.mykotlin.demo.zxing.CaptureActivity;
 import com.myself.mykotlin.demo.zxing.EricQRActivity;
+import com.myself.mykotlin.tencentx5demo.TencentX5Activity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -22,7 +23,7 @@ public class MainActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn_0, R.id.btn_1, R.id.btn_2, R.id.btn_3,R.id.btn_4, R.id.btn_5, R.id.btn_6})
+    @OnClick({R.id.btn_0, R.id.btn_1, R.id.btn_2, R.id.btn_3, R.id.btn_4, R.id.btn_5, R.id.btn_6})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_0:
@@ -41,7 +42,7 @@ public class MainActivity extends BaseActivity {
                 startActivity(NoteActivity.class);
                 break;
             case R.id.btn_5:
-//                startActivity(EcodeActivity.class);
+                startActivity(TencentX5Activity.class);
                 break;
             case R.id.btn_6:
 //                startActivity(EricQRActivity.class);

@@ -3,4 +3,11 @@
     <string name="title_activity_base">BaseActivity</string>
     <string name="hello">Hello World, CaptureActivity!</string>
     <string name="action_settings">Settings</string>
+
+    <!--x5demo-->
+    <string name="title_activity_mini_qb">MiniQBActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="tag"> (X5内核功能演示)</string>
+    <string name="tip">普通接入直接参考“APPApplication” “BrowserActivity” “X5WebView”中相关实现即可</string>
+
 </resources>
