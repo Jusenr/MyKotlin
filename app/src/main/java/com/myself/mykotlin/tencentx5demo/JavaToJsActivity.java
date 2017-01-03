@@ -42,7 +42,7 @@ public class JavaToJsActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.java_to_js_layout);
+        setContentView(R.layout.activity_java_to_js);
 
         this.handler = new Handler(Looper.myLooper()) {
 

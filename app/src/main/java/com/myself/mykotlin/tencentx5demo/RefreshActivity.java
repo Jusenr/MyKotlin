@@ -21,7 +21,7 @@ public class RefreshActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.refresh_layout);
+        setContentView(R.layout.activity_refresh);
         webView = (X5WebView) findViewById(R.id.web_filechooser);
         title = (TextView) findViewById(R.id.refreshText);
         webView.setTitle(title);

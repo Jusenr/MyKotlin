@@ -19,7 +19,7 @@ public class SystemWebActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fullscreen_sys_web);
+        setContentView(R.layout.activity_system_web);
         webView = (SystemWebView) findViewById(R.id.full_sys_web_webview);
         webView.loadUrl(mHomeUrl);
         webView.addJavascriptInterface(new Object() {

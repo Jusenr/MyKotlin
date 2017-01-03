@@ -15,7 +15,7 @@ public class WebViewTransportActivity extends BaseActivity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		
-		setContentView(R.layout.fullscreen_web);
+		setContentView(R.layout.activity_webView_transport);
 		
 		X5WebView.setSmallWebViewEnabled(true);//开启webview窗口转移功能
 		x5WebView=(X5WebView) findViewById(R.id.full_web_webview);
