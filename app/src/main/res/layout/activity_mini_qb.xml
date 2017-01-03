@@ -2,16 +2,19 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin"
                 tools:context="com.myself.mykotlin.tencentx5demo.MiniQBActivity">
 
     <com.tencent.smtt.sdk.WebView
+        android:id="@+id/wv_wevview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
 
-    </com.tencent.smtt.sdk.WebView>
+    <com.myself.mykotlin.tencentx5demo.util.X5WebView
+        android:id="@+id/wv_X5WebView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        />
+
 
 </RelativeLayout>

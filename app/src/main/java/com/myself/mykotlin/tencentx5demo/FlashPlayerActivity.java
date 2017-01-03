@@ -18,7 +18,7 @@ public class FlashPlayerActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_file_chooser);
         webView = (X5WebView) findViewById(R.id.web_filechooser);
-        webView.loadUrl("http://wap.ithome.com/html/85517.htm");
+        webView.loadUrl("http://blog.csdn.net/github_35033182");
         this.initBtn();
     }
 
